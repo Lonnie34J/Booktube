@@ -2,6 +2,9 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
 
+import bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import reactBootstrap from "react-bootstrap/dist/react-bootstrap.js";
+
 // Include the main Main Component
 var Main = require("./components/Main");
 

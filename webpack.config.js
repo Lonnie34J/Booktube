@@ -17,11 +17,41 @@ module.exports = {
         // Webpack will only process files in our app folder. This avoids processing
         // node modules and server files unnecessarily
         include: /app/,
+        exclude: /node_modules/,
         loader: "babel",
         query: {
           // These are the specific transformations we'll be using.
           presets: ["react", "es2015"]
         }
+      },
+        {
+
+        test: /\.css$/, 
+        loader: "style-loader!css-loader" 
+      },
+      { 
+        test: /\.png$/, 
+        loader: "url-loader?limit=100000" 
+      },
+      { 
+        test: /\.jpg$/, 
+        loader: "file-loader" 
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, 
+        loader: 'url?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
+        loader: 'file'
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ]
   },
